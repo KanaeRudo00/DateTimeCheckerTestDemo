@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\zooma_api.props" />
+</Project>
