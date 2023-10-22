@@ -41,9 +41,9 @@ namespace zooma_api.Controllers
         }
         public IActionResult IsValidDate(int day, int month, int year)
         {
-            if (month >= 1 && month <= 12)
+            if (month >= 1 && month < 12)
             {
-                if (day >= 1)
+                if (day >= 0)
                 {
                     if (day <= DaysInMonth(year, month))
                     {

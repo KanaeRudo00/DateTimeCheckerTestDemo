@@ -31,12 +31,12 @@ namespace UnitTest
         }
         [Test]
 
-        public void IsValidDate_InputIsDay31Month4Year2000_Return400()
+        public void IsValidDate_InputIsDay31Month4Year2005_Return400()
         {
             // ARRANGE
             var day = 31;
             var month = 4;
-            var year = 2000;
+            var year = 2005;
 
             //ACT
             var result = _dateTimeTracker.IsValidDate(day, month, year);
@@ -62,6 +62,23 @@ namespace UnitTest
             Assert.IsNotNull(RequestResult);
             Assert.AreEqual(200, RequestResult.StatusCode);
         }
+        [Test]
+        public void IsValidDate_InputIsDay29Month2Year1900_Return400()
+        {
+            // ARRANGE
+            var day = 29;
+            var month = 2;
+            var year = 1900;
+
+            //ACT
+            var result = _dateTimeTracker.IsValidDate(day, month, year);
+            var RequestResult = result as BadRequestObjectResult;
+
+            // ASSERT
+            Assert.IsNotNull(RequestResult);
+            Assert.AreEqual(400, RequestResult.StatusCode);
+        }
+
         [Test]
         public void IsValidDate_InputIsDay29Month2Year2004_Return200()
         {

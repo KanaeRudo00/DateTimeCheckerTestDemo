@@ -15,7 +15,7 @@ namespace UnitTest
         }
 
         [Test]
-        public void DaysInMonth_InputIsMonth12Year2000_ReturnTrue()
+        public void DaysInMonth_InputIsMonth12Year2000_Return31()
         {
             // ARRANGE
             var month = 12;
@@ -119,7 +119,20 @@ namespace UnitTest
             // ASSERT
             Assert.AreEqual(result, expectedOutput);
         }
+        [Test]
+        public void DaysInMonth_InputIsMonth2Year1900_Return0()
+        {
+            // ARRANGE
+            var month = 2;
+            var year = 1900;
+            var expectedOutput = 28;
 
+            // ACT
+            var result = DateTimeTracker.DaysInMonth(year, month);
+
+            // ASSERT
+            Assert.AreEqual(result, expectedOutput);
+        }
 
     }
 

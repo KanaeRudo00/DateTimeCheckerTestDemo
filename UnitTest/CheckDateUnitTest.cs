@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using zooma_api.Controllers;
 
-namespace DateTimeTracker
+namespace UnitTest
 {
     public class CheckDateUnitTest
     {
